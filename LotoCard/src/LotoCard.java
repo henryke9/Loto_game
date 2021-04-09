@@ -6,6 +6,7 @@ public class LotoCard
     int[][] numberCard = new int[3][9];
     public static Scanner scanner = new Scanner(System.in);
     
+    
     public LotoCard()
     {
     
@@ -147,10 +148,40 @@ public class LotoCard
 
     } 
     
+   
+    
     private void exitMenu() {
         System.exit(0);
     }
     
+    
+    
+    
+    void check() {
+        
+        Random rand = new Random();
+        int n = rand.nextInt(90)+1;
+        System.out.println("O numero sorteado é: " + n);
+        
+        
+        for(int i = 0; i<3; i++) {
+            for(int j=0;j<9; j++) {
+                if(numberCard[i][j] == n) {
+                    numberCard[i][j] = -1;
+                    System.out.println("O Número " + n + " encontra-se no cartao! Foi substituido por -1!");
+                    
+                }
+            } 
+            
+            
+
+           
+        }
+      
+        menu();
+    } 
+    
+           
     void menu() {
         System.out.println("******************************************");
         System.out.println("                LOTO");
@@ -170,10 +201,11 @@ public class LotoCard
             printNumCard();
         }
         if( choice == 2){
-         //   drawNumber();
+            
+            
         }
         if(choice == 3){
-          //  checkLoto();
+            check();
         }
         if(choice == 9){
             exitMenu();
