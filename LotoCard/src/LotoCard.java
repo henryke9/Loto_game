@@ -155,11 +155,7 @@ public class LotoCard
     }
     
     
-    void draw() {
-        
-  
 
-}
 
         
     
@@ -181,16 +177,75 @@ public class LotoCard
             } 
             }       
             
-
+                
            
         }
+        int counter = 0;
+        for(int e=0;e<9; e++) {
+               
+                if(numberCard[0][e] == -1) {
+                    counter++;
+        }
+            
+        
+        } 
+        
+        if (counter == 5) {
+            System.out.println("Primeira linha completa!");
+    }
+        
+        int counter1 = 0;
+        for(int z=0;z<9; z++) {
+               
+                if(numberCard[1][z] == -1) {
+                    counter1++;
+        }
+            
+        
+        }
+        if (counter1 == 5) {
+            System.out.println("Segunda linha completa!");
+            
+    }
+        
+        int counter2 = 0;
+        for(int a=0;a<9; a++) {
+               
+                if(numberCard[2][a] == -1) {
+                    counter2++;
+        }
+            
+        
+        }
+        if (counter2 == 5) {
+            System.out.println("Terceira linha completa!");
+    }
       
         menu2();
     } 
     
 
-    
-    
+    void lotocheck() {
+        int counter = 0;
+        
+        for(int i = 0; i<3; i++) {
+            for(int j=0;j<9; j++) {
+                if(numberCard[i][j] == -1) {
+                    counter++;
+                    
+            }       
+    } 
+        } 
+        if (counter == 15){
+                menuVencedor();
+                
+                    
+                    } else {
+                        System.out.println("Ainda não ganhou! Continue a jogar.");
+                        menu2();
+                    }
+        
+    }
     
     void menu() {
         System.out.println("******************************************");
@@ -214,11 +269,36 @@ public class LotoCard
         }
 
 }
+    
+    void menuVencedor() {
+        System.out.println("");
+        System.out.println("Parabéns! Ganhou o jogo!");
+        System.out.println("* 1) Continuar com o mesmo cartão");
+        System.out.println("* 2) Criar novo cartão");
+        System.out.println("* 9) Sair");
+    
+    int choice = scanner.nextInt();
+    
+        if (choice == 1) {
+            
+        }
+        
+        if (choice == 2) {
+            
+            printNumCard();
+        }
+        if (choice == 9) {
+            exitMenu();
+        }
+    }
+    
+    
     void menu2() {
         
         System.out.println("");
         System.out.println("* 1) Ver o cartao");
         System.out.println("* 2) Sortear numero");
+        System.out.println("* 3) Verificar LOTO");
         System.out.println("* 9) Sair ");
         System.out.println("Selecionar uma opcao do menu: ");
     
@@ -232,7 +312,9 @@ public class LotoCard
            check();
             
         }
-        
+        if (choice == 3) {
+            lotocheck();
+        }
         
         if(choice == 9){
             exitMenu();
