@@ -12,17 +12,8 @@ public class LotoCard
     
     for(int i = 0; i < numberCard.length; i++)
     {
-    this.numberCard[i][0] = randInt(1, 9);
-        
-        while(this.numberCard[i][0] != numberCard[i][0])
-        {  
-            i++;
+    numberCard[i][0] = randInt(1, 9);
         }
-        if(this.numberCard[i][0] == numberCard[i][0])
-        {
-            numberCard[i][0] = randInt(1, 9);
-        }
-    }
     
     for(int j = 0; j < numberCard.length; j++)
     {
@@ -64,7 +55,7 @@ public class LotoCard
         numberCard[e][8] = randInt(80,90 );
         }
     
-//Cinco numeros primeira linha
+    //Cinco numeros primeira linha
         Random random0 = new Random();
         int randomLocation = 0;
         
@@ -79,7 +70,7 @@ public class LotoCard
             
             
         }
-        //Cinco numeros segunda linha
+    //Cinco numeros segunda linha
         Random random1 = new Random();
         int randomLocation1 = 0;
         
@@ -93,7 +84,7 @@ public class LotoCard
             }
           
         }
-        //Cinco numeros terceira linha
+   //Cinco numeros terceira linha
         Random random2 = new Random();
         int randomLocation2 = 0;
         
@@ -105,10 +96,8 @@ public class LotoCard
                 numberCard [2][b2] = 0;
                 randomLocation2++;
             }
-          
         }
-       
-        }
+    }
    
          
     
@@ -142,10 +131,6 @@ public class LotoCard
     public static void main(String[] args)
     {
         new LotoCard().menu();
-        
-        //LotoCard bc = new LotoCard();
-        //bc.printNumCard();
-
     } 
     
    
@@ -153,12 +138,6 @@ public class LotoCard
     private void exitMenu() {
         System.exit(0);
     }
-    
-    
-
-
-        
-    
     
     void check() {
         
@@ -175,30 +154,26 @@ public class LotoCard
                     
                 
             } 
-            }       
+        }       
             
-                
-           
-        }
+    }
         int counter = 0;
         for(int e=0;e<9; e++) {
                
                 if(numberCard[0][e] == -1) {
                     counter++;
-        }
-            
-        
+            }
         } 
         
         if (counter == 5) {
             System.out.println("Primeira linha completa!");
-    }
+        }
         
         int counter1 = 0;
         for(int z=0;z<9; z++) {
                
-                if(numberCard[1][z] == -1) {
-                    counter1++;
+            if(numberCard[1][z] == -1) {
+                counter1++;
         }
             
         
@@ -206,7 +181,7 @@ public class LotoCard
         if (counter1 == 5) {
             System.out.println("Segunda linha completa!");
             
-    }
+        }
         
         int counter2 = 0;
         for(int a=0;a<9; a++) {
@@ -214,13 +189,11 @@ public class LotoCard
                 if(numberCard[2][a] == -1) {
                     counter2++;
         }
-            
+    }
         
-        }
         if (counter2 == 5) {
             System.out.println("Terceira linha completa!");
     }
-      
         menu2();
     } 
     
@@ -236,16 +209,15 @@ public class LotoCard
             }       
     } 
         } 
+        
         if (counter == 15){
                 menuVencedor();
-                
                     
-                    } else {
-                        System.out.println("Ainda não ganhou! Continue a jogar.");
-                        menu2();
-                    }
-        
-    }
+        } else {
+                System.out.println("Ainda não ganhou! Continue a jogar.");
+                    menu2();
+                }
+        }
     
     void menu() {
         System.out.println("******************************************");
@@ -257,10 +229,9 @@ public class LotoCard
         System.out.println("");
         System.out.println("Selecionar uma opcao do menu: ");
     
-    int choice = scanner.nextInt();
+        int choice = scanner.nextInt();
 
         if(choice == 1){
-
             printNumCard();
         }
       
@@ -277,14 +248,13 @@ public class LotoCard
         System.out.println("* 2) Criar novo cartão");
         System.out.println("* 9) Sair");
     
-    int choice = scanner.nextInt();
+         int choice = scanner.nextInt();
     
         if (choice == 1) {
             
         }
         
         if (choice == 2) {
-            
             printNumCard();
         }
         if (choice == 9) {
@@ -305,11 +275,10 @@ public class LotoCard
     int choice = scanner.nextInt();
 
         if(choice == 1){
-
             printNumCard();
         }
         if( choice == 2){
-           check();
+            check();
             
         }
         if (choice == 3) {
@@ -319,7 +288,5 @@ public class LotoCard
         if(choice == 9){
             exitMenu();
         }
-
     }
-    
 }
