@@ -133,7 +133,7 @@ public class LotoCard
         }
         System.out.println();
     }
-   menu();
+   menu2();
     
     return string;
     
@@ -155,6 +155,13 @@ public class LotoCard
     }
     
     
+    void draw() {
+        
+  
+
+}
+
+        
     
     
     void check() {
@@ -170,29 +177,50 @@ public class LotoCard
                     numberCard[i][j] = -1;
                     System.out.println("O Número " + n + " encontra-se no cartao! Foi substituido por -1!");
                     
-                }
+                
             } 
-            
+            }       
             
 
            
         }
       
-        menu();
+        menu2();
     } 
     
-           
+
+    
+    
+    
     void menu() {
         System.out.println("******************************************");
         System.out.println("                LOTO");
         System.out.println("******************************************");
-        System.out.println("* 1) Create a Loto card");
-        System.out.println("* 2) Draw a number");
-        System.out.println("* 3) Check Loto card");
-        System.out.println("* 9) Exit ");
+        System.out.println("* 1) Criar cartao de loto");
+        System.out.println("* 9) Sair ");
         System.out.println("******************************************");
         System.out.println("");
-        System.out.println("Select a menu option: ");
+        System.out.println("Selecionar uma opcao do menu: ");
+    
+    int choice = scanner.nextInt();
+
+        if(choice == 1){
+
+            printNumCard();
+        }
+      
+        if(choice == 9){
+            exitMenu();
+        }
+
+}
+    void menu2() {
+        
+        System.out.println("");
+        System.out.println("* 1) Ver o cartao");
+        System.out.println("* 2) Sortear numero");
+        System.out.println("* 9) Sair ");
+        System.out.println("Selecionar uma opcao do menu: ");
     
     int choice = scanner.nextInt();
 
@@ -201,15 +229,15 @@ public class LotoCard
             printNumCard();
         }
         if( choice == 2){
-            
+           check();
             
         }
-        if(choice == 3){
-            check();
-        }
+        
+        
         if(choice == 9){
             exitMenu();
         }
 
-}
+    }
+    
 }
