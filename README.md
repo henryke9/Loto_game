@@ -1,4 +1,4 @@
-# Jogo do LOTO.
+# Jogo do LOTO
 
 Para iniciar o jogo sem recurso a um IDE: 
 
