@@ -1,13 +1,24 @@
 import java.util.*;
 
+/**
+ * A classe <b>LotoCard</b> representa a classe principal de todo o jogo.
+ * @author Henrique Teotónio
+ * @version 1.0
+ */
 
 public class LotoCard
 {
     Random randNum = new Random();
     int[][] numberCard = new int[3][9];
+   /**
+    * Ferramenta de scanner
+    */
+    
     public static Scanner scanner = new Scanner(System.in);
     
-   
+   /**
+    * Metodo que permite gerar o cartão
+    */
     public LotoCard()
     {
     
@@ -22,7 +33,12 @@ public class LotoCard
         }
     }
     } 
-    //Numeros random
+    /**
+     * Gerador de numeros random
+     * @param min Numero minimo no intervalo de numeros random
+     * @param max Numero maximo no intervalo de numeros random
+     * @return 
+     */
    private int randInt(int min, int max) 
 {
     int random;
@@ -30,8 +46,12 @@ public class LotoCard
     return random;
 }
 
-    // Imprimir cartao
-    public String printNumCard()
+   /**
+    * Classe utlizada para imprimir o cartao
+    * @return 
+    */
+   
+    private String printNumCard()
 {
     String string = "";
     System.out.println("             *|LOTO CARD|*");
@@ -48,7 +68,10 @@ public class LotoCard
     return string;
     
  }
-
+    /**
+     * Classe main que executa o menu
+     * @param args 
+     */
     public static void main(String[] args)
     {
         new LotoCard().menu();
@@ -60,7 +83,9 @@ public class LotoCard
         System.exit(0);
     }
     
-    //Metodo verificar linha completa + sorteio
+    /**
+     * A classe check() sorteia o numero e verifica se há linhas completas.
+     */
     void check() {
        
         Random rand = new Random();
@@ -119,7 +144,9 @@ public class LotoCard
         menu2();
     } 
     
-    //Metodo verificar vitoria
+   /**
+    * O metodo lotocheck() verifica se o jogador consegiu ou não terminar o jogo fazendo loto.
+    */
     void lotocheck() {
         int counter = 0;
         
@@ -140,7 +167,9 @@ public class LotoCard
                     menu2();
                 }
         }
-    
+    /**
+     * O metodo menu() cria o menu inicial do jogo
+     */
     void menu() {
         System.out.println("******************************************");
         System.out.println("                LOTO");
@@ -159,32 +188,42 @@ public class LotoCard
       
         if(choice == 9){
             exitMenu();
+        } else {
+            System.out.println("Valor invalido");
+            menu();
         }
 
 }
-    
+    /**
+     * O metodo menuVencedor() cria um menu apos o utilizador vencer o jogo.
+     */
     void menuVencedor() {
         System.out.println("");
         System.out.println("Parabéns! Ganhou o jogo!");
-        System.out.println("* 1) Continuar com o mesmo cartão");
-        System.out.println("* 2) Criar novo cartão");
+        System.out.println("* 1) Jogar novamente");
         System.out.println("* 9) Sair");
     
          int choice = scanner.nextInt();
     
         if (choice == 1) {
+            new LotoCard().menu();
             
         }
         
-        if (choice == 2) {
-            printNumCard();
-        }
+       
         if (choice == 9) {
             exitMenu();
         }
+        
+        else {
+            System.out.println("Valor inválido");
+            menuVencedor();
+        }
     }
     
-    
+    /**
+     * Metodo utlizado para criar menu apoós a criação do cartão
+     */
     void menu2() {
         
         System.out.println("");
@@ -209,6 +248,10 @@ public class LotoCard
         
         if(choice == 9){
             exitMenu();
+        }
+        else {
+            System.out.println("Valor inválido");
+            menu2();
         }
     }
 }
