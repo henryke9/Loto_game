@@ -1,8 +1,5 @@
-# Jogo do LOTO
+# Loto Game
 
-Para iniciar o jogo sem recurso a um IDE: 
 
-- Abrir LotoCard.jar ou LotoCard.exe dependendo da preferência.
 
- 
-Um projeto de Henrique Teotónio.
+By Henrique Teotónio
